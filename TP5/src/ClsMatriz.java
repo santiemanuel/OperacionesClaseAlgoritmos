@@ -6,6 +6,7 @@ public class ClsMatriz implements Operaciones {
 	private int columnas;
 	private ClsEntero matriz[][];
 
+	//Cargo la matriz con valores de la cadena valores
 	public ClsMatriz(int filas, int columnas, String valores){
 		this.filas = filas;
 		this.columnas = columnas;
@@ -14,6 +15,7 @@ public class ClsMatriz implements Operaciones {
 		cargaMatriz(valores);
 	}
 	
+	//Cargo la matriz con valores al azar
 	public ClsMatriz(int filas, int columnas){
 		this.filas = filas;
 		this.columnas = columnas;
@@ -22,7 +24,7 @@ public class ClsMatriz implements Operaciones {
 		cargaMatriz();
 	}
 	
-	
+	//Convierto la cadena en valores enteros en un ArrayList
 	private ArrayList<Integer> StringToMatrix(String valor){
 		String[] listaNum = valor.split(" ");
 		ArrayList<Integer> lista = new ArrayList<Integer>();
@@ -34,6 +36,7 @@ public class ClsMatriz implements Operaciones {
 		return (lista);
 	}
 	
+	//Convierto una matriz en una cadena
 	private String MatrixToString(int filaX, int columnaX, ClsMatriz mat){
 		int filas = mat.filas;
 		int columnas = mat.columnas;
@@ -51,6 +54,7 @@ public class ClsMatriz implements Operaciones {
 		
 	}
 	
+	//Carga de matriz de valores al azar
 	private void cargaMatriz(){
 		
 		int valor;
@@ -69,7 +73,7 @@ public class ClsMatriz implements Operaciones {
 		}
 	}
 	
-	
+	//Carga de matriz usando la cadena valores
 	private void cargaMatriz(String valores){
 		
 		ArrayList<Integer> lista = StringToMatrix(valores);
@@ -103,7 +107,7 @@ public class ClsMatriz implements Operaciones {
 		System.out.println();
 	}
 	
-	
+	//Calculo la determinante de una matriz de 2x2
 	private int detMinima(Object a){
 		int valorA = ((ClsMatriz)a).matriz[0][0].getNumero();
 		int valorB = ((ClsMatriz)a).matriz[0][1].getNumero();
@@ -122,6 +126,7 @@ public class ClsMatriz implements Operaciones {
 		}
 	}
 	
+	//Calculo determinante de una matriz de nxn
 	public int determinante(int sumando, ClsMatriz mat){
 		
 		int fila = ((ClsMatriz)mat).filas;
@@ -153,6 +158,7 @@ public class ClsMatriz implements Operaciones {
 		
 	}
 
+	//Suma de matrices
 	public void sumar(Object a, Object b){
 		
 		int filaA = ((ClsMatriz)a).filas;
@@ -176,7 +182,8 @@ public class ClsMatriz implements Operaciones {
 		}
 
 	}
-
+	
+	//Resta de matrices
 	public void restar(Object a, Object b){
 		
 		int filaA = ((ClsMatriz)a).filas;
@@ -210,6 +217,7 @@ public class ClsMatriz implements Operaciones {
 	}
 
 	@Override
+	//Producto de matrices
 	public void multiplicar(Object a, Object b) {
 		
 		int filaA = ((ClsMatriz)a).filas;
@@ -248,6 +256,7 @@ public class ClsMatriz implements Operaciones {
 	}
 
 	@Override
+	//Potencia de matriz
 	public void potencia(Object a, Object b) {
 		
 		int filaA = ((ClsMatriz)a).filas;
@@ -269,6 +278,7 @@ public class ClsMatriz implements Operaciones {
 	}
 
 	@Override
+	//Comparacion de matrices
 	public boolean igualdad(Object a, Object b) {
 
 		int filaA = ((ClsMatriz)a).filas;

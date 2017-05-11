@@ -3,7 +3,7 @@ public class pruebaMatriz {
 
 	public static void main(String[] args) {
 		ClsMatriz miMatriz;
-		miMatriz = new ClsMatriz(10,10);
+		miMatriz = new ClsMatriz(4,4);
 		
 		miMatriz.mostrarMatriz("Primera matriz: ");
 		/*otraMatriz = new ClsMatriz(3,3);
